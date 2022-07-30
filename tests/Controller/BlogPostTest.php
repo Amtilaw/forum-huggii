@@ -52,5 +52,4 @@ class BlogPostTest extends WebTestCase
         $this->assertResponseRedirects('/subject/form');
     }
 
-    
 }
