@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SubjectDefaultController!
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<a href="{{ path('app_message', {'subjectId': subject.id}) }}" class="btn btn-success">Add New message</a>
+		<div class="row">
+			<div class="col-md-12 p-3 ">
+				<h1>Subject :
+					{{subject.name}}
+					- Created at
+					{{subject.dateCreated |date('d-m-Y') }}</h1>
+			</div>
+			{% for message in messages %}
+				<div class="col-md-12 px-5">
+					<h2>{{message.contenue}}</h2>
+					<p>{{message.dateCreated |date('d-m-Y') }}</p>
+				</div>
+			{% endfor %}
+		{% endblock %}

@@ -54,13 +54,14 @@ class SubjectRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Subject
-//    {
-//        return $this->createQueryBuilder('s')
-//            ->andWhere('s.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+//Find all subject with the last message
+    public function findAllWithLastMessage(): array
+    {
+        return $this->createQueryBuilder('s')
+            ->select('s, m')
+            ->leftJoin('s.messages', 'm')
+            ->orderBy('s.id', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
 }
