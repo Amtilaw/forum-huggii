@@ -51,7 +51,7 @@ class MessageController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($message);
             $entityManager->flush();
-            //Redirect to the same page
+            //Redirect to subject page
             return $this->redirectToRoute('app_subject_default', ['subjectId' => $subjectId]);
         }
         //Render form 

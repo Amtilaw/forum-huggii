@@ -24,7 +24,7 @@ class SubjectDefaultController extends AbstractController
         //Get the subject from the database
         $subject = $subject->find($subjectId);
         //Get all messages from the database
-        $messages = $message->findBy(['subject' => $subject], ['date_created' => 'DESC']);
+        $messages = $message->findBy(['subject' => $subject], ['date_created' => 'ASC']);
         
         return $this->render('subject_default/index.html.twig', [
             'controller_name' => 'SubjectDefaultController',

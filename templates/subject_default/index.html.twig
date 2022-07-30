@@ -5,12 +5,12 @@
 
 {% block body %}
 	<div class="container">
-		<a href="{{ path('app_message', {'subjectId': subject.id}) }}" class="btn btn-success">Add New message</a>
+		<a href="{{ path('app_message', {'subjectId': subject.id}) }}" class="btn btn-success">Ajouter un message</a>
 		<div class="row">
 			<div class="col-md-12 p-3 ">
-				<h1>Subject :
+				<h1>Sujet :
 					{{subject.name}}
-					- Created at
+					- Créer le
 					{{subject.dateCreated |date('d-m-Y') }}</h1>
 			</div>
 			{% for message in messages %}
